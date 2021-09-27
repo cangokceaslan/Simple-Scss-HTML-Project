@@ -1,0 +1,17 @@
+@use 'sass:math';
+@mixin square($size: 40px) {
+  width: $size;
+  height: $size;
+  border: 3px solid white !important;
+}
+
+@mixin long($size: 300px) {
+  width: $size;
+  height: math.div(($size * 4), 3);
+  border: 3px solid white !important;
+}
+
+@mixin inlineBlock($margin: 30px 10px 30px 10px) {
+  display: inline-block;
+  margin: $margin;
+}

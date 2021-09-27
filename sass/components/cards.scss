@@ -1,0 +1,64 @@
+@use "../constants/index.scss" as constants;
+@use "../mixins/index.scss" as functions;
+@use "../colors/colors.scss" as colors;
+
+.card-container {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden !important;
+    max-height: calc(420px);
+    color: colors.$secondaryColor;
+    white-space: nowrap;
+
+    .card {
+        @include functions.defaultBoxShadow();
+        @include functions.inlineBlock();
+        background-color: colors.$primaryColor;
+        color: inherit;
+        margin-bottom: 20px;
+        cursor: pointer;
+        white-space: normal;
+
+        .card-img-top {
+            border-width: 0px;
+        }
+
+        .card-body {
+            background-color: inherit;
+            .card-title {
+                color: inherit;
+            }
+
+            .card-text {
+                color: inherit;
+            }
+            a {
+                width: 100%;
+                background-color: colors.$buttonColor;
+                border-color: colors.$buttonColor;
+            }
+        }
+        &:hover {
+            background-color: colors.$secondaryColor;
+            color: colors.$primaryColor;
+        }
+        @media screen and (max-width: constants.$x_small) {
+            background-color: yellow;
+        }
+        @media screen and (min-width: constants.$x_small) and (max-width: constants.$small) {
+            background-color: red;
+        }
+        @media screen and (min-width: constants.$small) and (max-width: constants.$medium) {
+            background-color: blue;
+        }
+        @media screen and (min-width: constants.$medium) and (max-width: constants.$large) {
+            background-color: green;
+        }
+        @media screen and (min-width: constants.$large) and (max-width: constants.$x_large) {
+            background-color: gray;
+        }
+    }
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
